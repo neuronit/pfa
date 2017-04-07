@@ -1,0 +1,52 @@
+ svg {
+background :  #FFF;
+cursor : move;
+border: 1px solid black;
+}
+
+.circles {
+    fill: #ccc;
+    stroke: #000;
+    stroke-width: 2px;
+}
+
+.active {
+    stroke-width: 4px;
+    stroke-dasharray: 5;
+}
+
+svg:not(.over) {
+    cursor: crosshair;
+}
+
+
+text {
+  font: 12px sans-serif;
+  pointer-events: none;
+}
+
+text.id {
+  text-anchor: middle;
+  font-weight: bold;
+}
+
+path.link {
+  fill: none;
+  stroke: #000;
+  stroke-width: 4px;
+  cursor: move;
+}
+
+ .axis path{
+    fill: none;
+    stroke: black;
+  }
+
+  .tick text{
+    font-size: 12px;
+  }
+
+  .tick line{
+    opacity: 0.3;
+     stroke: black;
+  }

@@ -1,0 +1,19 @@
+from django.db import models
+
+# Create your models here.
+
+class Reseau(models.Model):
+    
+    id = models.IntegerField(default=0,primary_key=True)
+    name= models.CharField(max_length=200)
+    input=models.IntegerField(default=0)
+    def __str__(self):
+        return self.name
+    
+class Game(models.Model):
+    game_id=models.IntegerField(default=0,primary_key=True)
+    game_name= models.CharField(max_length=200)
+    def __str__(self):
+        return self.game_name
+    
+    

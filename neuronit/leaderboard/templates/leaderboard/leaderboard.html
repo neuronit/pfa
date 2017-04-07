@@ -1,0 +1,75 @@
+{% extends 'site_base.html' %}
+{% block head_title %}Leaderboard{% endblock %}
+{% block body %}
+<link href='/site_media/static/css/leaderboard.css' rel='stylesheet'/>
+    <div id="col-left" class="col-lg-4">
+        <h2>Games</h2>
+        <p>Select a game</p>
+        <br>
+        <ul class="list-group list-unstyled" id="games">
+            {% for Game in game_list %}
+                <li><a href="/leaderboard/{{ Game.game_id }}"
+                       class="list-group-item {% if game_id == Game.game_id %} active {% endif %}">{{ Game.game_name }}</a>
+            {% endfor %}
+        </ul>
+    </div>
+    <div id="col-right" class="col-lg-8">
+        <div class="container">
+            <h2>Leaderboard</h2>
+	    <h3>Best 20 players</h3>
+            <p></p>
+            <br>
+            {% if best_score_list %}
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Score</th>
+                        <th>Date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for score in best_score_list %}
+                        {% if request.user.is_authenticated and score.player_name == request.user.username %}
+                            <tr class="info">
+                                <td>{{ score.player_name }}</td>
+                                <td>{{ score.best_score }}</td>
+                                <td>{{ score.date }}</td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td>{{ score.player_name }}</td>
+                                <td>{{ score.best_score }}</td>
+                                <td>{{ score.date }}</td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                    </tbody>
+                </table>
+                {% if request.user.is_authenticated %}
+                    <div class="alert-info">
+                        <a>Your score : </a>
+                        {% if my_score %}
+                            <table class="table">
+                                <tbody>
+
+                                <tr>
+                                    <td>{{ my_score.player_name }}</td>
+                                    <td>{{ my_score.best_score }}</td>
+                                    <td>{{ my_score.date }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        {% else %}
+                            <a> No score found !</a>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            {% else %}
+                <div class="text-error">
+                    No rows available !
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

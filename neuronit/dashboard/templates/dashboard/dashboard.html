@@ -1,0 +1,45 @@
+{% extends 'site_base.html' %}
+{% block head_title %}Dashboard{% endblock %}
+{% block body %}
+    <div class="col-lg-4 text-center" style="top: 50%;">
+        <h2>Games</h2>
+        <p>Select a game</p>
+        <br>
+        <div class="list-group">
+            {% for Game in game_list %}
+                <a class="list-group-item">{{ Game.game_name }}</a>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-lg-8">
+        <div class="container">
+            <h2 style="margin-left: 15%">Leaderboard</h2>
+            <p></p>
+            <br>
+            {% if best_score_list %}
+                <table class="table" style="width: 50%;">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Score</th>
+                        <th>Date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for score in best_score_list %}
+                        <tr>
+                            <td>{{ score.player_name }}</td>
+                            <td>{{ score.best_score }}</td>
+                            <td>{{ score.date }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <div class="text-error">
+                    No rows available !
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

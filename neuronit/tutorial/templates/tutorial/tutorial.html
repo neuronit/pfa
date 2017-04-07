@@ -1,0 +1,338 @@
+{% extends 'site_base.html' %}
+
+{% load staticfiles %}
+{% block head_title %}Tutorial{% endblock %}
+{% load account_tags %}
+{% block body %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'tutorial/css/tutorial.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'play/css/app.css' %}"/>
+<script src="{% static 'play/js/main.js' %}"></script>
+<script src="{% static 'play/js/game_info.js' %}"></script>
+
+
+<script src="{% static 'play/js/d3.js' %}"></script>
+<script src="{% static 'play/js/refresh.js' %}"></script>
+
+<link rel="stylesheet" type="text/css" href="{% static 'play/css/style.css' %}"/>
+
+	  <!-- Button trigger modal -->
+			  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#start">
+			    Launch tuto
+			  </button>
+			  
+			  <!-- Modal -->
+			  <div class="modal fade" id="start" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			    <div class="modal-dialog" role="document">
+			      <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				  <h4 class="modal-title" id="myModalLabel">Hello newbie</h4>
+				</div>
+				<div class="modal-body">
+				<h4>  Hello ! Wanna learn how to play our game, how to build an awesome neural network ? This tutorial is for you ! <br>
+
+				  Let's start, click on the button below ;)</h4>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">I don't want to</button>
+				  <button type="button" class="btn btn-primary" onclick="step2();">Let's go !</button>
+				</div>
+			      </div>
+			    </div>
+			  </div>
+
+
+		  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#step1">
+			    Step 1
+			  </button>
+			  
+			  <!-- Modal -->
+			  <div class="modal fade" id="step1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			    <div class="modal-dialog" role="document">
+			      <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				  <h4 class="modal-title" id="myModalLabel">First step</h4>
+				</div>
+				<div class="modal-body">
+				 <h4> Let's first talk about the purpose of this site: <br>
+this is a serious game, you build networks, you let them play at various games and see how they learn and become better, try to get the best scores and contribute to science in your own way ! <br></h4>
+<h4>Choose a game below to start building </h4>
+<div class="col-md-4">
+<img src="{% static 'tutorial/img/cartpole.png' %}" id="CartPole-v0" onclick="step3(id);" width="300" /> <br>
+CartPole: your goal is to ...
+</div>
+<div class="col-md-4">
+<img src="{% static 'tutorial/img/mountain.png' %}" id="MountainCar-v0" onclick="step3(id);" width="300" /><br>
+MountainPole: your goal is to ...
+</div>
+<div class="col-md-4">
+<img src="{% static 'tutorial/img/pacman.png' %}"  id="MsPacman-v0" onclick="step3(id);" width="270" height="250"/><br>
+The famous Pacman: your goal is to
+</div>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+				</div>
+			      </div>
+			    </div>
+			  </div>
+
+
+
+		  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#step2">
+		    Step 2
+			  </button>
+			  
+			  <!-- Modal -->
+			  <div class="modal fade" id="step2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			    <div class="modal-dialog" role="document">
+			      <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				  <h4 class="modal-title" id="myModalLabel">Relevant Networks</h4>
+				</div>
+				<div class="modal-body">
+				  <h4> Now let's talk about networks,<br>
+				    What is a network ? How does it work ? Basically it is ... <br><br>
+
+
+				    There are different types of networks with various behaviors, here we are showing some of their features but you will learn about them by yourself. Choose one you think is appropriate !</h4>
+
+<div class="col-md-4">
+<center>
+<img src="{% static 'tutorial/img/mlp.png' %}" id="mlp" onclick="step4(id);" width="70" /> <br>
+MLP (Multilayer Perceptron) : a modification of the traditional Perceptron with each two consecutive layers fully connected and that maps the input data onto the output regardless of the data type ( the traditional perceptron was limited to linearly separable data). 
+
+</center>
+</div>
+<div class="col-md-4">
+<center>
+  <img src="{% static 'tutorial/img/elman.png' %}" id="elman" onclick="step4(id);" width="70" /><br>
+  Elman networks : an advanced version of the MLP that contains a hidden layer in the architecture which enables it to preserve the context (or state) of the network in order to accomplish tasks such as sequence-prediction.
+</center>
+</div>
+<div class="col-md-4">
+<center>
+<img src="{% static 'tutorial/img/jordan.png' %}"  id="jordan" onclick="step4(id);" width="70"/><br>
+<br>
+Jordan networks : similar to the Elman networks but the context is deduced from the output layer with no addition of a hidden layer. 
+</center>
+
+</div>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+				</div>
+			      </div>
+			    </div>
+			  </div>
+
+
+
+
+		  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#step3">
+		    Step 3
+			  </button>
+			  
+			  <!-- Modal -->
+			  <div class="modal fade" id="step3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			    <div class="modal-dialog" role="document">
+			      <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				  <h4 class="modal-title" id="myModalLabel">Parameters</h4>
+				</div>
+				<div class="modal-body"><h4>
+				  Now your network will look like this:
+				  <br>
+<div class= "row">
+<div class="col-md-6">
+<img src="{% static 'tutorial/img/step3.png' %}"  id="step3result" width="400"/>
+
+</div>
+<div class="col-md-6">
+  <br>
+  <br>
+  
+-an input, given information from your game; <br><br>
+-your network who will take these information and process them; <br><br>
+-the output, the result of the process which determine the next step that your network will do in the game.<br>
+-And repeat! The next step information of the game will become the input and so game continues and you will be able to see how your network do in the game you have chosen !
+</div>
+</div>
+
+
+<div>
+  But you have to know that each network have parameters you can modify and each parameter influence differently each type of network. Moreover, you can modify some of the global game parameters( Epochs and simulations). Find the relevant one ! 
+
+Let's try to modify our parameters, change the parameters below, you can find some information on them by clicking on the question mark next to them or find more in our tab &quot learn more &quot<br>
+</h4>
+
+<div class="Parameters">
+  
+  <center><h3>Parameters</h3></center>
+  <div class="left">
+    <center>
+    <form action="/play/" method="post">
+      {% csrf_token %}
+      
+      
+      {% for field in globalForm %}
+      <div>
+        {{ field.errors }}
+        {{ field.label_tag }} {{ field }}
+	
+	
+      </div>
+      {% endfor %}
+      <hr>
+      
+      {% for field in form %}
+      <div class="fieldform">
+        {{ field.errors }}
+        {{ field.label_tag }} {{ field }}
+        <button type="button" class="btn btn-warning btn-smsecondary" data-container="body"
+                data-toggle="popover" data-placement="top"
+                data-content="{{ field.help_text }}">
+          <i class="fa fa-question" aria-hidden="true"></i>
+        </button>
+	
+	
+      </div>
+      {% endfor %}
+      <!--  <p> Network param</p> -->
+      
+      
+      <input type="submit" id="modifyParam" class="btn btn-warning"
+             value="Click here to change">
+    </form>
+    </center>
+  </div>
+  </div>
+    
+
+  </div>
+
+
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				  <button type="button" onclick="step5();"class="btn btn-primary">Next step</button>
+				</div>
+			      </div>
+			    </div>
+			  </div>
+
+
+
+
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#step4">
+		    Step 4
+			  </button>
+			  
+			  <!-- Modal -->
+			  <div class="modal fade" id="step4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			    <div class="modal-dialog" role="document">
+			      <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				  <h4 class="modal-title" id="myModalLabel">Final step</h4>
+				</div>
+				<div class="modal-body">
+				 <h4> Your network is ready to play and learn but before letting you go we have some advice:
+<br><br>
+<div>
+first, do not consider this tutorial as enough to be efficient, you will find that a lot of players are far better than you and it's because they know a lot more on neural networks than you. 
+</div>
+<br>
+<div>
+That's why, secondly, we advise you to look at the &quot learn more &quot tab to find more information on neural networks 
+</div>
+<br>
+<div>
+Finally, we encourage you to contribute to the community through our forum, you can find help and other people results on our games !
+</div>
+</h4>
+
+				</div>
+				<div class="modal-footer">
+				  <form action="/play">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				  <button type="submit" class="btn btn-primary">
+				    Play !</button>
+				  </form>
+				</div>
+			      </div>
+			    </div>
+			  </div>
+
+
+<p style="color:white">.</p>
+                    <svg width="770" height="500"></svg>
+                    <script>
+                        var svg = d3.select("svg")
+                        svg.append('svg:defs').append('svg:pattern')
+                            .attr('id', 'in')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("x", 0)
+                            .attr("y", 0)
+                            .append('svg:image')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("xlink:href", "{% static 'tutorial/img/in.png' %}")
+
+                        svg.append('svg:defs').append('svg:pattern')
+                            .attr('id', 'out')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("x", 0)
+                            .attr("y", 0)
+                            .append('svg:image')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("xlink:href", "{% static 'tutorial/img/out.png' %}")
+
+                        svg.append('svg:defs').append('svg:pattern')
+                            .attr('id', 'mlp')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("x", 0)
+                            .attr("y", 0)
+                            .append('svg:image')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("xlink:href", "{% static 'tutorial/img/mlp.png' %}")
+
+                        svg.append('svg:defs').append('svg:pattern')
+                            .attr('id', 'jordan')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("x", 0)
+                            .attr("y", 0)
+                            .append('svg:image')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("xlink:href", "{% static 'tutorial/img/jordan.png' %}")
+
+                        svg.append('svg:defs').append('svg:pattern')
+                            .attr('id', 'elman')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("x", 0)
+                            .attr("y", 0)
+                            .append('svg:image')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("xlink:href", "/site_media/static/tutorial/img/elman.png")
+
+                    </script>
+                    
+		    <script src="{% static 'tutorial/js/tuto_app.js' %}"></script>
+                    <script src="{% static 'tutorial/js/tutorial.js' %}"></script>
+
+{% endblock %}

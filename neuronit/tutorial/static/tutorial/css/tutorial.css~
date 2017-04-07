@@ -1,0 +1,9 @@
+#step1 .modal-dialog {
+
+width:80%;
+}
+
+#step2 .modal-dialog {
+
+width:80%;
+}

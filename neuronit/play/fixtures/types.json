@@ -1,0 +1,82 @@
+[
+ {
+        "pk":1,
+        "model": "play.Reseau_info",
+        "fields": {
+            "network_name": "MLP",
+            "info": "totoMlp"       
+        }
+    },
+    {
+        "pk":2,
+        "model": "play.Reseau_info",
+        "fields": {
+            "network_name": "Elman",
+            "info": "totoElman"            
+        }
+    },
+    {
+        "pk":3,
+        "model": "play.Reseau_info",
+        "fields": {
+            "network_name": "Jordan",
+            "info": "Jordan"   
+	}
+    },
+  {
+        "pk":4,
+        "model": "play.Reseau_info",
+        "fields": {
+            "network_name": "Temporize",
+            "info": "totoTempo"   
+	}
+    },
+  {
+        "pk":5,
+        "model": "play.Reseau_info",
+        "fields": {
+            "network_name": "Add",
+            "info": "totoAdd"   
+	}
+    },  
+  {
+        "pk":6,
+        "model": "play.Reseau_info",
+        "fields": {
+            "network_name": "Substract",
+            "info": "totoSub"   
+	}
+    },  
+  {
+        "pk":7,
+        "model": "play.Reseau_info",
+        "fields": {
+            "network_name": "Divide",
+            "info": "totoDivide"   
+	}
+    },  
+  {
+        "pk":8,
+        "model": "play.Reseau_info",
+        "fields": {
+            "network_name": "Average",
+            "info": "totoAverage"   
+	}
+    },  
+  {
+        "pk":9,
+        "model": "play.Reseau_info",
+        "fields": {
+            "network_name": "Recomposite",
+            "info": "totoRecompo"   
+	}
+    },  
+  {
+        "pk":10,
+        "model": "play.Reseau_info",
+        "fields": {
+            "network_name": "Decomposite",
+            "info": "totoDecompo"   
+	}
+    }  
+]

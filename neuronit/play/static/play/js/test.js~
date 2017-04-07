@@ -1,0 +1,64 @@
+
+function modif(val) {
+  var ava = document.getElementById("avancement");
+  if((ava.value+val)<=ava.max && (ava.value+val)>0) {
+     ava.value += val;
+  }
+  avancement();
+}
+
+
+
+function network_parameters(network_type){
+    var tmp = document.querySelectorAll(".network");
+    for (var i = 0 ; i< tmp.length; i++){
+	var x = document.getElementById(network_type);
+	
+	currentGame.innerHTML=x;
+	if (tmp[i].id == x.getAttribute("id"))
+	    x.style.display='block';
+	else
+	    tmp[i].style.display='none';
+    }
+
+}
+
+
+
+function network2(element){
+    var tmp = document.getElementById("network2");
+    var nw1 = document.getElementById("network1");
+    tmp.style.display='block';
+    
+}
+
+
+function getname(identifier){     
+    var tmp=identifier.getAttribute("name");
+    info=identifier.getAttribute("info");
+    currentGame.innerHTML=tmp;
+    Gamecontent.innerHTML=info;
+
+   // currentGame.setAttribute("name",tmp);
+
+
+
+    $.ajax({
+        method: 'get',
+        url: '/play/templates/make_animation.py',
+        data: {name: tmp},
+
+        success: function (data) {
+             alert("it worked!");
+        },
+        error: function (data) {
+             alert("it didnt work");
+        }
+    });
+    return tmp 
+
+
+}
+
+
+

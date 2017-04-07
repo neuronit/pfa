@@ -1,0 +1,245 @@
+
+
+
+
+{% extends 'site_base.html' %}
+
+
+{% load staticfiles %}
+{% block head_title %}Play{% endblock %}
+{% load account_tags %}
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{% static 'play/css/style.css' %}"/>
+<script src="{% static 'play/js/test.js' %}"></script>
+<!-- <link href='/site_media/static/css/site-e7b87bbea0.css' rel="stylesheet"/>
+ <script src='/site_media/static/js/site-5e73bbeeb0.js'></script> -->
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+<!--
+    <header>
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+
+                <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="fa fa-bars"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">example.com</a>
+                </div>
+                <div class="collapse navbar-collapse navbar-responsive-collapse">
+
+
+                    <ul class="nav navbar-nav pull-right">
+
+                        <li><a href="/account/login/">Log in</a></li>
+
+                        <li><a href="/account/signup/">Sign up</a></li>
+
+
+                    </ul>
+
+                    <form id="accountLogOutForm" style="display: none;" action="/account/logout/" method="POST">
+                        <input type='hidden' name='csrfmiddlewaretoken' value='XqcgYia9YbAliZ2YRUE6B5W7z1wE0tY5'/>
+                    </form>
+
+
+                </div>
+
+            </div>
+        </div>
+    </header>
+    
+    -->
+<div class="container2">
+  
+  <section>
+    
+    <div class="col-md-3">
+      <center>
+        <i class="fa fa-cubes fa-3x"></i><br>
+	
+	
+        {% if reseau_list %}
+	
+        <ul>
+          {% for reseau in reseau_list %}
+	  
+          <li><span class="italic">{{ reseau.name }}</span></li>
+	  
+        </ul>
+        {% endfor %}
+	
+        {% endif %}
+	
+	
+      </center>
+      
+      <div>
+        <center>
+          <b>More info</b><br>
+			Here on click, more info on parameters
+        </center>
+	
+      </div>
+      
+      
+      <div class="Parameters">
+	<center><h3>Parameters</h3></center>
+	<div class="left">
+	  
+	  <h4>Learning method</h4>
+          <select class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+	  
+
+	  
+          <p>
+            <h4>Network size </h4><br>
+            <progress id="avancement" value="50" max="100"></progress>
+            <span id="pourcentage"> </span>
+            <input type="button" onclick="modif(-10);" value="-">
+            <input type="button" onclick="modif(10);" value="+">
+          </p>
+
+	  <p class="network" id="network1" style="display: none;">
+	    <b>Layers</b>
+	    <select class="form-control" class="btn btn-warning">
+	      <option>1</option>
+	      <option>2</option>
+	      <option>3</option>
+	    </select>
+
+
+	  </p>
+
+
+	  <p class="network" id="network2" style="display: none;"> network2 parameter</p>
+
+
+
+	</div>
+	
+    </div>
+      <div class="clicknetwork">
+	<center>
+			  <a href="#"  onclick="network_parameters('network1'); return false;">Network 1 </a><br>
+			  <a href="#"  onclick="network_parameters('network2'); return false;">Network 2 </a><br>
+			  
+			  <!-- Button trigger modal -->
+			  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+			    Launch demo modal
+			  </button>
+			  
+			  <!-- Modal -->
+			  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			    <div class="modal-dialog" role="document">
+			      <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				  <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+				</div>
+				<div class="modal-body">
+				  ...
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				  <button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			      </div>
+			    </div>
+			  </div>
+
+
+			  
+			</center>						
+		      </div>
+
+		    
+    </div>
+
+
+
+            <div class="col-md-6">
+                <div class="test">
+                    <center>
+                        <i class="fa fa-puzzle-piece fa-3x"></i><br>
+
+                        <b>Your game here</b> <br>
+                        Your structure
+
+                    </center>
+                </div>
+	    </div>
+            <div class="col-md-3">
+                <center>
+
+
+                    <div class="dropdown">
+
+		      <button class="btn btn-primary  dropdown-toggle"  type="button" data-toggle="dropdown" aria-controls="collapseExample">Games
+                        <span class="caret"></span></button>
+
+
+		      <ul class="dropdown-menu ">		
+                        {% for Game in game_list %}
+
+			<li> <a name={{Game.game_name}} href="#"  info={{Game.info}} onclick="getname(this); return false;" ></
+
+<i class="fa fa-gamepad fa-fw" aria-hidden="true"></i>&nbsp;{{ Game.game_name }}
+                        </a></li>
+			 <li class="divider"></li>
+                        {% endfor %}
+		      </ul>
+			
+                    </div>
+
+                </center>
+		
+                <div>
+
+                  <center>
+                   <div class="highlight"> 
+		     <p id="currentGame" name="CartPole-v0">CartPole-v0</p>
+		     <p id="Gamecontent">Sélectionner votre jeu pour plus d'informations</p>
+
+
+
+		   </div>	
+                        <div class="animation">
+                            {% include "animation.html" %}
+                        </div>
+
+
+                    </center>
+
+
+                    <input type="button" onclick="start();" value="+">
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+

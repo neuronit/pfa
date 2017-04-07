@@ -1,0 +1,57 @@
+#footer {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 70px;
+    width: 100%;
+    color: #99979c;
+    text-align: center;
+    background-color: #000000;
+    z-index: 5;
+}
+
+#footer-ul {
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+#footer li {
+    display: inline-block;
+}
+
+.forum{
+ border:2px solid black;
+ padding:3px;
+
+}
+
+.jumbotron:hover {
+    background-color:#99d6ff;
+}
+
+#learn #row1 .col-lg-8 {
+    text-align: center;
+    border-bottom:2px solid #6b6b6b;
+}
+
+#learn #row2 .col-lg-8 {
+    font-size: 1.1em;
+    text-align: justify;
+}
+
+#learn #row3 .col-lg-8 {
+    text-align: center;
+    border-bottom:2px solid #6b6b6b;
+}
+
+#learn #row3 .col-lg-8 h3 {
+    opacity: 0.5;
+}
+
+#learn #row4 .col-lg-8 {
+    text-align: center;
+}
+
+#learn #row4 .col-lg-8 ul {
+    list-style-type: none;
+}

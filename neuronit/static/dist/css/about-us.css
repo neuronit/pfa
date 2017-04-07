@@ -1,0 +1,97 @@
+#about-us {
+    display: block;
+    width: 100%;
+    line-height: 1.6em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#about-us h2 {
+    margin-bottom: 50px;
+    padding-bottom: 40px;
+    font-size: 80px;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+#about-us #about-intro {
+    margin-bottom: 50px;
+}
+
+#about-us #about-intro p {
+    margin: 20px 0 0 0;
+    padding: 0;
+}
+
+#about-us #about-intro p:first-child {
+    margin-top: 0;
+}
+
+#about-us #team {
+    margin-bottom: 0;
+}
+
+#about-us #team ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-content: center
+}
+
+#about-us #team ul li {
+    margin-bottom: 30px;
+    margin-left: 5%;
+}
+
+#about-us #team ul li figure {
+    position: relative;
+    text-align: center;
+}
+
+#about-us #team ul li figure img {
+    width: 245px; 
+    height: 245px;
+    padding: 9px;
+    border: 1px solid #CCCCCC;
+}
+
+#about-us #team ul li figure figcaption {
+    width: 225px; 
+    height: 225px; 
+    margin-left: 27px;    
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    overflow: hidden;
+    color: #FFFFFF;
+    background: hsla(0, 0%, 0%, 0.8);
+}
+
+#about-us #team ul li:hover figure figcaption {
+    display: block;
+}
+
+#about-us #team ul li figure figcaption p {
+    margin: 15px 15px 0 15px;
+    padding: 0;
+}
+
+#about-us #team ul li figure figcaption p:first-child {
+    margin-top: 35px;
+}
+
+#about-us #team ul li figure figcaption .team_name {
+    font-weight: bold;
+}
+
+#about-us #team ul li figure figcaption .team_title {
+    margin: 0;
+    font-size: 11px;
+    line-height: normal;
+}
+
+#about-us #team ul li figure figcaption .team_description {
+    text-align: left;
+}

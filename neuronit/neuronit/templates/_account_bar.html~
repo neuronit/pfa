@@ -1,0 +1,114 @@
+{% load i18n %}
+{% load account_tags %}
+{% load spirit_tags %}
+{% load staticfiles %}
+<script src="{% static 'play/js/test.js' %}"></script>
+
+
+<!-- Header -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <header>
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand page-scroll" href="/"><strong> {{ SITE_NAME }}</strong></a>
+            </div>
+
+            <!-- Items -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse" id="topNavBar">
+                <ul class="nav navbar-nav">
+                    <li class="about"><a href="{% url 'about-us' %}"><i class="fa fa-hashtag"></i> About us </a>
+                    </li>
+                    <li class="play"><a href="/play" ><i
+                            class="fa fa-play"></i> Play </a>
+                      
+                    </li>
+
+                    <li class="learn"><a href="{% url 'learn' %}"><i class="fa fa-info-circle"></i> Learn more </a></li>
+                    <li class="contact"><a href="{% url 'contact' %}"><i class="fa fa-envelope"></i> Contact us </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav pull-right">
+		    <li>
+                            <a href="{% url 'spirit.topic.index-active' %}"><i class="fa fa-user-circle" aria-hidden="true"></i> Forum
+                            </a> 
+                    </li>
+                    {% if request.user.is_authenticated %}
+                        <p class="navbar-text">
+                            <i class="fa fa-user"></i> {% user_display request.user %}
+                        </p>
+                        <li>
+                            <a href="{% url 'leaderboard' %}"><i class="fa fa-dashboard"></i> {% trans "Leaderboard" %}
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{% url 'account_settings' %}"><i class="fa fa-cog"></i> {% trans "Settings" %}</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'account_logout' %}"><i class="fa fa-sign-out"></i> {% trans "Log out" %}
+                            </a>
+                        </li>
+                        {% if request.user.is_superuser %}
+                            <li>
+                                <a href="/8c6976e5b5410415bde"><i
+                                        class="fa fa-server"></i> {% trans "Admin access" %}
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% else %}
+                        <li>
+                            <a href="{% url 'leaderboard' %}"><i class="fa fa-dashboard"></i> {% trans "Leaderboard" %}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'account_login' %}"><i class="fa fa-sign-in"></i> {% trans "Log in" %}</a>
+                        </li>
+                        {% if ACCOUNT_OPEN_SIGNUP %}
+                            <li><a href="{% url 'account_signup' %}"><i
+                                    class="fa fa-plus-circle"></i> {% trans "Sign up" %}</a></li>
+                        {% endif %}
+                    {% endif %}
+                </ul>
+            </div>
+        </header>
+    </div>
+</nav>
+
+<!--<ul class="nav navbar-nav pull-left">-->
+<!--<li>-->
+<!--<a href="{%  url 'contact' %}">Contact us</a>-->
+<!--</li>-->
+<!--</ul>-->
+
+<!--<ul class="nav navbar-nav pull-right">-->
+<!--{% if request.user.is_authenticated %}-->
+    <!--<p class="navbar-text">-->
+    <!--<i class="fa fa-user"></i> {% user_display request.user %}-->
+    <!--</p>-->
+    <!--<li>-->
+    <!--<a href="{% url 'account_settings' %}"><i class="fa fa-cog"></i> {% trans "Settings" %}</a>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<a id="account_logout" href="{% url 'account_logout' %}"><i class="fa fa-power-off"></i> {% trans "Log out" %}</a>-->
+    <!--</li>-->
+    <!--{% else %}-->
+    <!--<li><a href="{% url 'account_login' %}">{% trans "Log in" %}</a></li>-->
+    <!--{% if ACCOUNT_OPEN_SIGNUP %}-->
+        <!--<li><a href="{% url 'account_signup' %}">{% trans "Sign up" %}</a></li>-->
+        <!--{% endif %}-->
+    <!--{% endif %}-->
+<!--</ul>-->
+
+<!--<form id="accountLogOutForm" style="display: none;" action="{% url 'account_logout' %}" method="POST">-->
+<!--{% csrf_token %}-->
+<!--</form>-->
+
+

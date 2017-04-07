@@ -1,0 +1,26 @@
+[
+    {
+        "pk": 1,
+        "model": "play.Game",
+        "fields": {
+            "game_name": "CartPole-v0",
+	    "info": "CartPole-v0 is a"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "play.Game",
+        "fields": {
+            "game_name": "MountainCar-v0",
+	    "info": "Mountain"
+        }
+    },
+     {
+        "pk": 3,
+        "model": "play.Game",
+        "fields": {
+            "game_name": "MsPacman-v0",
+	    "info": "Mountain"
+        }
+     }
+]

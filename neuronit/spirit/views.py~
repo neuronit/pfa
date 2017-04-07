@@ -1,0 +1,37 @@
+from django.core import management
+from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse
+from django.shortcuts import render
+import gym
+from .models import *
+
+
+
+
+
+
+
+def index(request):
+    
+    env=gym.make('CartPole-v0')
+    reseau_list= Reseau.objects.all()
+    game_list= Game.objects.all()
+
+
+    context= {
+        'reseau_list': reseau_list,
+        'game_list': game_list,
+        }
+
+    
+    return render(request,'play/play.html',context);
+
+
+
+            
+    
+
+
+
+# Create your views here.
+

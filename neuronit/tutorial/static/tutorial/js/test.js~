@@ -1,0 +1,20 @@
+
+function modif(val) {
+  var ava = document.getElementById("avancement");
+  if((ava.value+val)<=ava.max && (ava.value+val)>0) {
+     ava.value += val;
+  }
+  avancement();
+}
+
+
+
+function start(){
+    $.ajax({
+	type: "GET",
+	url:"~/neuronit/tutorial/output.py",
+    }).done(function( o ){
+    });
+
+    
+}

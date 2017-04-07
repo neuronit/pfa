@@ -1,0 +1,21 @@
+.italic {
+    color: green;
+    font-family:Verdana;
+}
+
+.test{
+    background-color: rgb(245, 245, 245);
+
+    
+
+}
+
+.animation{
+
+    width:auto;
+    height: auto;
+}
+
+.left{
+    padding-left: 50px;
+}

@@ -1,0 +1,160 @@
+<!-- <link href='/site_media/static/css/neural.css' rel='stylesheet' /> -->
+{% extends "site_base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}Home{% endblock %}
+
+{% block body_class %}home{% endblock %}
+
+{% block body_base %}
+    <link href='/site_media/static/css/neural.css' rel='stylesheet'/>
+    <section id="banner">
+        <div class="inner">
+            <h2>A crowdsourcing playful project on neural networks</h2>
+            <p>Enjoy. Have fun. Learn.</p>
+        </div>
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'account_settings' %}" class="btn btn-lg" role="button">Settings</a>
+        {% else %}
+            <a href="{% url 'account_login' %}" class="btn btn-lg" role="button">Log in</a>
+        {% endif %}
+    </section>
+    <section id="presentation">
+        <h2>A unique experience building neural networks</h2>
+        <!--
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-6">
+
+                      <h2>Fold It ! </h2>
+                  <p><strong>A serious game like Neuron It </strong></p>
+                      <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="Fold " src="//www.youtube.com/embed/axN0xdhznhY"></iframe>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+
+                      <h2>Fold It 2 ! </h2>
+                  <p><strong>Aussi fun que cette vidéo</strong> </p>
+                      <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="Fold " src="//www.youtube.com/embed/axN0xdhznhY"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                -->
+        <div class="container" style="width: 800px">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="/site_media/static/img/neuronit_logo.PNG" width="800" height="315">
+                        <div class="carousel-caption">
+                            <h3>A logo</h3>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="/site_media/static/img/neuronit_logo.PNG" width="800" height="315">
+                        <div class="carousel-caption">
+                            <h3>Another logo</h3>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="/site_media/static/img/neuronit_logo.PNG" width="800" height="315">
+                        <div class="carousel-caption">
+                            <h3>The last logo</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div> <!-- Carousel -->
+        </div>
+    </section>
+
+
+    <!--<section class="jumbotron">-->
+    <!--<div class="container">-->
+    <!--{% include "_messages.html" %}-->
+    <!--<h1>{% blocktrans %}Welcome to<br>pinax-project-account{% endblocktrans %}</h1>-->
+    <!--<p>-->
+    <!--{% blocktrans %}-->
+        <!--In addition to what is provided by the "zero" project, this project-->
+        <!--provides thorough integration with django-user-accounts, adding-->
+        <!--comprehensive account management functionality. It is a foundation-->
+        <!--suitable for most sites that have user accounts.-->
+        <!--{% endblocktrans %}-->
+    <!--</p>-->
+    <!--{% if not user.is_authenticated %}-->
+        <!--{% url "account_login" as login_url %}-->
+        <!--{% url "account_signup" as signup_url %}-->
+        <!--<p>{% blocktrans %}You can <a href="{{ login_url }}" class="btn btn-default">Log In</a> or <a href="
+            {{ signup_url }}" class="btn btn-primary">Sign Up</a> to try out the site.{% endblocktrans %}</p>-->
+        <!--{% endif %}-->
+    <!--</div>-->
+    <!--</section>-->
+    <!--<section>-->
+    <!--<div class="container">-->
+    <!--<h2 class="text-center">{% blocktrans %}What is Pinax?{% endblocktrans %}</h2>-->
+    <!--<p class="lead">-->
+    <!--{% blocktrans %}-->
+        <!--<b>Pinax</b> is an open-source platform based on Django and-->
+        <!--intended to provide a starting point for websites. It takes-->
+        <!--care of the things that many sites have in common, so you can-->
+        <!--focus on what makes your site different.-->
+        <!--{% endblocktrans %}-->
+    <!--</p>-->
+    <!--<div class="feature-columns">-->
+    <!--<div>-->
+    <!--<i class="fa fa-cubes fa-3x"></i><br>-->
+    <!--{% blocktrans %}-->
+        <!--<b>Starter projects</b> provide project layout,-->
+        <!--scaffolding, already integrated components and-->
+        <!--ready-to-go code.-->
+        <!--{% endblocktrans %}-->
+    <!--</div>-->
+    <!--<div>-->
+    <!--<i class="fa fa-puzzle-piece fa-3x"></i><br>-->
+    <!--{% blocktrans %}-->
+        <!--<b>Reusable apps</b> provide common-->
+        <!--infrastructure, back-end functionality,-->
+        <!--and user-facing components.-->
+        <!--{% endblocktrans %}-->
+    <!--</div>-->
+    <!--<div>-->
+    <!--<i class="fa fa-tint fa-3x"></i><br>-->
+    <!--{% blocktrans %}-->
+        <!--<b>Themes</b> provide default templates and-->
+        <!--stylesheets for quick prototyping and easy customization.-->
+        <!--{% endblocktrans %}-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</section>-->
+    <!--<section>-->
+    <!--<div class="container">-->
+    <!--<p class="lead text-center">-->
+    <!--{% blocktrans %}-->
+        <!--See <a href="http://pinaxproject.com/">pinaxproject.com</a>-->
+        <!--for more information.-->
+        <!--{% endblocktrans %}-->
+    <!--</p>-->
+    <!--</div>-->
+
+    <!---->
+    <!--</section>-->
+{% endblock %}

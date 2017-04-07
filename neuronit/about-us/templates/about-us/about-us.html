@@ -1,0 +1,36 @@
+{% extends 'site_base.html' %}
+{% block head_title %}About us{% endblock %}
+{% block body %}
+<div class="wrapper row2">
+  <div id="container" class="clear">
+    <div id="about-us" class="clear">
+      <section id="about-intro" class="clear">
+        <h2>About Us</h2>
+	{% for p in par_list %}
+        <p>{% autoescape off %}{{ p.content }}{% endautoescape %}</p>
+	{% endfor %}
+      </section>
+      <section id="team">
+        <h2>Our Team</h2>
+        <ul class="clear">
+	  {% for p in team_list %}
+          <li class="one_third {% if forloop.counter0|divisibleby:3 %}first{% endif %}">
+	    {% if p.image %}
+            <figure><img src="/site_media/media/{{ p.image }}" alt="">
+	    {% else %}
+            <figure><img src="/site_media/static/img/profile.png" alt="">
+	      {% endif %}
+              <figcaption>
+                <p class="team_name">{{ p.name }}</p>
+                <p class="team_title">{{ p.title }}</p>
+                <p class="team_description">{{ p.description_text }}</p>
+              </figcaption>
+            </figure>
+          </li>
+	  {% endfor %}
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>
+{% endblock %}

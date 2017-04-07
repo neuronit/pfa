@@ -1,0 +1,79 @@
+[
+  {
+    "model": "neuronit.carousel",
+    "pk": 1,
+    "fields": {
+      "title": "Welcome in Neuron It !",
+      "intro_text": "Here you can play neuronal games :)",
+      "link": "https://www.google.fr/",
+      "link_text": "Learn more on google",
+      "image": "images_carousel/None/47504153-background.png"
+    }
+  },
+  {
+    "model": "neuronit.learnlink",
+    "pk": 1,
+    "fields": {
+      "title": "Neural network definition by Wikipedia",
+      "text": "Neural networks are a computational approach, which is based on a large collection of neural units (AKA artificial neurons)",
+      "link": "https://en.wikipedia.org/wiki/Artificial_neural_network"
+    }
+  },
+  {
+    "model": "neuronit.learnlink",
+    "pk": 2,
+    "fields": {
+      "title": "Open AI Gym",
+      "text": "A toolkit for developing and comparing reinforcement learning algorithms. It supports teaching agents everything from walking to playing games like Pong or Go.",
+      "link": "https://gym.openai.com/"
+    }
+  },
+  {
+    "model": "neuronit.learnlink",
+    "pk": 3,
+    "fields": {
+      "title": "Deeplearning4j",
+      "text": "A tutorial to deep neural networks for the \u201cDeeplearning4j\u201d java library",
+      "link": "https://deeplearning4j.org/neuralnet-overview"
+    }
+  },
+  {
+    "model": "neuronit.learnlink",
+    "pk": 4,
+    "fields": {
+      "title": "Using neural nets to recognize handwritten digits",
+      "text": "Introductory chapter from \u2018Neural Networks and Deep Learning\u2019 by Michael Nielsen, an online free book detailing many core concepts in neural networks and deep learning.",
+      "link": "http://neuralnetworksanddeeplearning.com/chap1.htm"
+    }
+  },
+  {
+    "model": "neuronit.learnlink",
+    "pk": 5,
+    "fields": {
+      "title": "UCL Course on RL",
+      "text": "Video and text support for a lecture on reinforcement learning given at University College London by David Silver.",
+      "link": "http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching.html"
+    }
+  },
+  {
+    "model": "neuronit.learnpresentation",
+    "pk": 1,
+    "fields": {
+      "text": "<p><Strong>Neural networks</Strong> are a computational model used in computer science to <Strong>emulate the human brain</Strong> decision making process. These networks are constituted of simple neural units (or artificial neurons) divided into the different layers of the neural network architecture. Each individual neuron can be linked to many other neurons and the various links are characterised by a <Strong>weight factor</Strong>. The first step in the deep learning process requires a summation function that enables the neurons to sum all the different inputs multiplied by the weight factor. Then a sigmoid function serves as an activation function for the forward propagation of the input data.  After the completion of this process, the neural network makes a decision that is then compared to the expected output. The network is then <Strong>rewarded or punished</Strong> depending on its performance using the backpropagation algorithm that modifies the weight factors accordingly. The learning comes to <Strong>fruition</Strong> after a large number of iterations of this entire process are accomplished (the exact number depends on the complexity of the problem and the random sampling at the start of the learning process).</p>"
+    }
+  },
+  {
+    "model": "neuronit.learnpresentation",
+    "pk": 2,
+    "fields": {
+      "text": "A non-exhaustive list of <Strong>most used types of neural networks</Strong>:\r\n<ul>\r\n<li>\r\nPerceptron : a simple binary classifier that is based on supervised learning to decide whether an input of a vector of integers belongs to a certain class or not. \r\n</li>\r\n<li>\r\nMLP (Multilayer Perceptron) : a modification of the traditional Perceptron with each two consecutive layers fully connected and that maps the input data onto the output regardless of the data type ( the traditional perceptron was limited to linearly separable data).\r\n</li>\r\n<li>\r\nElman networks : an advanced version of the MLP that contains a hidden layer in the architecture which enables it to preserve the context (or state) of the network in order to accomplish tasks such as sequence-prediction.\r\n</li>\r\n<li>\r\nJordan networks : similar to the Elman networks but the context is deduced from the output layer with no addition of a hidden layer.\r\n</li>\r\n</ul>"
+    }
+  },
+  {
+    "model": "neuronit.learnpresentation",
+    "pk": 3,
+    "fields": {
+      "text": "Other types of neural networks you can play with :\r\n<center>\r\n<ul style=\"list-style-type: none\">\r\n<li>\r\n<table class=\"imager\">\r\n<caption  align=\"bottom\" style=\"text-align: center\">Add</caption>\r\n<tr><td><img src=\"/site_media/static/img/net1.jpg\" alt=\"\"></td></tr>\r\n</table>\r\n</li>\r\n<li>\r\n<table class=\"imager\">\r\n<caption  align=\"bottom\" style=\"text-align: center\">Substract</caption>\r\n<tr><td><img src=\"/site_media/static/img/net2.jpg\" alt=\"\"></td></tr>\r\n</table>\r\n</li>\r\n<li>\r\n<table class=\"imager\">\r\n<caption  align=\"bottom\" style=\"text-align: center\">Multiplier</caption>\r\n<tr><td><img src=\"/site_media/static/img/net3.jpg\" alt=\"\"></td></tr>\r\n</table>\r\n</li>\r\n<li>\r\n<table class=\"imager\">\r\n<caption  align=\"bottom\" style=\"text-align: center\">Divide</caption>\r\n<tr><td><img src=\"/site_media/static/img/net4.jpg\" alt=\"\"></td></tr>\r\n</table>\r\n</li>\r\n<li>\r\n<table class=\"imager\">\r\n<caption  align=\"bottom\" style=\"text-align: center\">Decomposite</caption>\r\n<tr><td><img src=\"/site_media/static/img/net5.jpg\" alt=\"\"></td></tr>\r\n</table>\r\n</li>\r\n<li>\r\n<table class=\"imager\">\r\n<caption  align=\"bottom\" style=\"text-align: center\">Recomposite</caption>\r\n<tr><td><img src=\"/site_media/static/img/net6.jpg\" alt=\"\"></td></tr>\r\n</table>\r\n</li>\r\n<li>\r\n<table class=\"imager\">\r\n<caption  align=\"bottom\" style=\"text-align: center\">Average</caption>\r\n<tr><td><img src=\"/site_media/static/img/net7.jpg\" alt=\"\"></td></tr>\r\n</table>\r\n</li>\r\n<li>\r\n<table class=\"imager\">\r\n<caption  align=\"bottom\" style=\"text-align: center\">Temporizer</caption>\r\n<tr><td><img src=\"/site_media/static/img/net8.jpg\" alt=\"\"></td></tr>\r\n</table>\r\n</li>\r\n</ul>\r\n</center>"
+    }
+  }
+]

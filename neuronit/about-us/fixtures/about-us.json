@@ -1,0 +1,79 @@
+[
+  {
+    "model": "about-us.descriptionp",
+    "pk": 1,
+    "fields": {
+      "content": "<h1>Team presentation</h1>\r\n<p>At the frontier between integrative and computational neuroscience, we propose to model the brain as a system of active memories in synergy and in interaction with the internal and external world and to simulate it as a whole and in situation.</p>\r\n<p>    Major cognitive and behavioral functions (eg. attention, recognition, planning, decision) emerge from adaptive sensorimotor loops involving the external world, the body and the brain. We study, model and implement such loops and their interactions toward a fully autonomous behavior. With such a \u201csystemic\u201d approach, we mean that such complex systems can only be truly apprehended as a whole and in natural behavioral situation. To design the functioning and learning characteristics of such models at the level of the neuronal circuitry and to implement them in systems interacting in loops with the world, we combine principles, methods and tools from different fields of science.</p>\r\n<ul>\r\n<li>     We model the main cerebral structures and flows of information in the brain (as in integrative and cognitive neuroscience), stressing the links between brain, body and environment (embodied cognition). </li>\r\n<li>     We use distributed computing formalisms allowing us to implement such models at different levels of description (as in computational neuroscience). </li>\r\n<li>     We deploy our models at large scale (high performance computing), incarnate them in bodies interacting with the environment (autonomous robotics) and simulate them interactively with respect to events encountered by a (virtual/real) robot. </li>\r\n</ul>\r\n<p>    Not only do we expect to share back such an integrative approach among these different fields of science, but beyond, we also aim at contributing to other related areas of both life sciences (neuroscience, medicine) and digital science (computer science, machine learning).</p>\r\n<h1>Research themes</h1>\r\n<p> In our systemic approach, we are thus mainly interested in the design of loops between the brain, the body and the external world and of their interactions to promote autonomous behavior. We pay a special attention to the fact that different kinds of memories are elaborated in these loops and, consequently, that the observed phenomena result from information exchange between these memories. </li>\r\n<ul>\r\n<li>   In so-called \u201cPerception loops\u201d, we explore cerebral circuits that allow to identify phenomena in the internal (bodily, neuronal) and external (sensory) worlds, towards the evaluation of the present state. Several kinds of learning are involved in the acquisition and representation of information allowing to discriminate states (cues, configurations, sequences, etc) that might participate in the decision for the future actions. The modeled structures correspond to the amygdala, the hippocampus and the sensory cortex. </li>\r\n<li>   In so-called &#8220;Action loops&#8221;, the perceptive analysis evoked above is exploited by motor territories of the brain to trigger actions in the internal (bodily, neuro-hormonal, decision) and external (motor) worlds. These territories include the basal ganglia and the prefrontal cortex.\r\n</li>\r\n</ul>\r\n<p>    Importantly, it must be underlined that actions triggered by the Action loops influence Perception loops indirectly through their consequences in the external world and also directly through neuronal activations in the Perception part (attention, sustained activities, inhibition of control). Reciprocally, decisions taken by Action loops are partly based on identifications and evaluations (prediction of punishment and reward, identification of sensory categories, recall of episodes) in Perception loops, forming the main bases of interaction between the loops.</p>"
+    }
+  },
+  {
+    "model": "about-us.teammember",
+    "pk": 1,
+    "fields": {
+      "name": "Fr\u00e9d\u00e9ric ALEXANDRE",
+      "image": "",
+      "title": "Research Director at INRIA",
+      "description_text": ""
+    }
+  },
+  {
+    "model": "about-us.teammember",
+    "pk": 2,
+    "fields": {
+      "name": "Andr\u00e9 GARENNE",
+      "image": "",
+      "title": "Assistant Professor at Bordeaux University",
+      "description_text": ""
+    }
+  },
+  {
+    "model": "about-us.teammember",
+    "pk": 3,
+    "fields": {
+      "name": "Nicolas ROUGIER",
+      "image": "",
+      "title": "Researcher at INRIA",
+      "description_text": ""
+    }
+  },
+  {
+    "model": "about-us.teammember",
+    "pk": 4,
+    "fields": {
+      "name": "Xavier Hinaut",
+      "image": "",
+      "title": "Researcher at INRIA",
+      "description_text": ""
+    }
+  },
+  {
+    "model": "about-us.teammember",
+    "pk": 5,
+    "fields": {
+      "name": "Thierry VIEVILLE",
+      "image": "",
+      "title": "Research Director at INRIA (partial time in the project)",
+      "description_text": ""
+    }
+  },
+  {
+    "model": "about-us.teammember",
+    "pk": 6,
+    "fields": {
+      "name": "Randa KASSAB",
+      "image": "",
+      "title": "Assistant Professor, Univeristy of Damas",
+      "description_text": ""
+    }
+  },
+  {
+    "model": "about-us.teammember",
+    "pk": 7,
+    "fields": {
+      "name": "Fabien Benureau",
+      "image": "",
+      "title": "Post Doc.",
+      "description_text": ""
+    }
+  }
+]

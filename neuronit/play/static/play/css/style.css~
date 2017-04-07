@@ -1,0 +1,65 @@
+
+
+
+
+
+.italic {
+    color: green;
+    font-family:Verdana;
+}
+
+.test{
+    background-color: rgb(245, 245, 245);
+
+
+
+}
+
+.container2{
+    width:1600px;
+    margin-left:-250px;
+
+}
+
+.animation{
+
+    width:auto;
+    height: auto;
+}
+
+.left{
+    padding-left: 10px;
+}
+
+.Parameters{
+    background-color:  	#FFA500;
+    margin-bottom:20px;
+    margin-top:20px;
+    border-radius: 10px;
+}
+.dropdown .dropdown-toggle {
+    width: 100%;
+}
+.dropdown .dropdown-menu{
+    width: 100%;
+
+}
+
+.dropdown .caret{
+    position: absolute;
+    left: 95%;
+    top: 50%;
+}
+.highlight{
+  background-color: rgb(244,244,244);
+  border-radius: 10px;
+  margin-top: 50px;
+}
+
+
+
+#currentGame{
+    background-color: #337AB7;
+    color:#fff;
+    border-radius: 10px;
+} 

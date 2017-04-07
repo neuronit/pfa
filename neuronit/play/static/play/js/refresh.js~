@@ -1,0 +1,18 @@
+
+update_param(node){
+
+
+
+    var type=document.getElementById("id_type");
+    var weight=document.getElementById("id_weight");
+    var victory=document.getElementById("id_victory");
+    var hidden_layers=document.getElementById("id_network_layers");
+
+    if ( node.type != "MLP" || node.type == "Elman" || node.type == "Jordan"){
+    type.setAttribute("value","node.type");
+    type.setAttribute("value","node.weight");
+    type.setAttribute("value","node.victory");
+    type.setAttribute("value","node.hidden_layers");
+    }
+
+}

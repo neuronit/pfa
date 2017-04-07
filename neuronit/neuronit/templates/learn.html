@@ -1,0 +1,47 @@
+{% extends 'site_base.html' %}
+{% block head_title %}Learn{% endblock %}
+{% block body %}
+<section id="learn">
+  <div id="row1" class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <h2 class="section-heading">Learn more</h2>
+    </div>
+  </div>
+
+  <br><br>
+  <div id="row2" class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      {% for p in presentation_list %}
+      {% autoescape off %}{{ p.text }}{% endautoescape %}
+      <br>
+      {% endfor %}
+    </div>
+    </div>
+  <br><br>    
+  <div id="row3" class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <h3 class="section-subheading">Here you will find further materials to learn more about neural network !</h3>
+    </div>
+  </div>
+  <div id="row4" class="row">
+    <br><br>    
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <ul class="list-group">
+	{% for link in link_list %}
+        <li>
+	  <div class="jumbotron" style="cursor: pointer;" 
+	       onclick="window.location='{{ link.link }}';">
+	    <p><strong>{{ link.title }}</strong></p>
+            <p>{{ link.text }}</p>
+	  </div>
+        </li>
+	{% endfor %}
+      </ul>
+      </div>
+    </div>
+</section>
+{% endblock %}

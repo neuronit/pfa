@@ -1,0 +1,12 @@
+.italic {
+    color: green;
+    font-family:Verdana;
+}
+
+.test{
+    background-color: rgb(245, 245, 245);
+
+    
+
+}
+

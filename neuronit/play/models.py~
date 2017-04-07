@@ -1,0 +1,59 @@
+from django.db import models
+from datetime import date
+from django.contrib import admin
+
+# Create your models here.
+
+
+class Reseau(models.Model):
+    
+    id = models.IntegerField(default=0,primary_key=True)
+    name= models.CharField(max_length=200)
+    input=models.IntegerField(default=0)
+    def __str__(self):
+        return self.name
+
+
+class Game(models.Model):
+    game_id=models.IntegerField(default=0,primary_key=True)
+    game_name= models.CharField(max_length=200)
+    info=models.CharField(max_length=300,default="")
+    def __str__(self):
+        return self.game_name
+
+
+class Score(models.Model):
+
+    id = models.AutoField(primary_key=True)
+    player_name = models.CharField(max_length=200)
+    game = models.ForeignKey(Game)
+    score = models.IntegerField(default=0)
+    date = models.DateField("Date", default=date.today)
+
+    def __str__(self):
+        return self.player_name
+
+
+class BestScore(models.Model):
+    id = models.AutoField(primary_key=True)
+    player_name = models.CharField(max_length=200)
+    game = models.ForeignKey(Game)
+    best_score = models.IntegerField(default=0)
+    date = models.DateField("Date", default=date.today)
+
+    def __str__(self):
+        return self.player_name
+
+
+class ScoreAdmin(admin.ModelAdmin):
+    list_display = ['id', 'player_name', 'game', 'score', 'date']
+    search_fields = ['player_name', 'game']
+
+
+class BestScoreAdmin(admin.ModelAdmin):
+    list_display = ['id', 'player_name', 'game', 'best_score', 'date']
+    search_fields = ['player_name', 'game']
+
+
+admin.site.register(Score, ScoreAdmin)
+admin.site.register(BestScore, BestScoreAdmin)

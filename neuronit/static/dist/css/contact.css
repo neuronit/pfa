@@ -1,0 +1,12 @@
+.col-lg-8 {
+    text-align: center;
+    border-bottom:2px solid #6b6b6b;
+}
+
+.col-lg-8 h3 {
+    opacity: 0.5;
+}
+
+.row .col-lg-6 {
+    text-align: center;
+}

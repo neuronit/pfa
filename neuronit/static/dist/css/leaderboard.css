@@ -1,0 +1,18 @@
+#col-left {
+    top: 50%;
+    text-align: center;
+}
+
+#col-right h2, #col-right h3 {
+    margin-left: 15%;
+}
+
+#col-right h3 
+{
+}
+
+#col-right table, #col-right .alert-info {
+    width: 50%;
+    position: relative;
+}
+

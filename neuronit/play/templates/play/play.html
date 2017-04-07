@@ -1,0 +1,470 @@
+
+
+
+{% extends 'site_base.html' %}
+
+
+{% load staticfiles %}
+{% block head_title %}Play{% endblock %}
+{% load account_tags %}
+{% block body %}
+    <!--
+        <header>
+            <div class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+
+                    <div class="navbar-header">
+                        <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="fa fa-bars"></span>
+                        </button>
+                        <a class="navbar-brand" href="/">example.com</a>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-responsive-collapse">
+
+        <!-- <script src='/site_media/static/js/site-5e73bbeeb0.js'></script>
+        <link href='/site_media/static/css/site-e7b87bbea0.css' rel="stylesheet"/> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'play/css/style.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'play/css/app.css' %}"/>
+    <script src="{% static 'play/js/main.js' %}"></script>
+    <script src="{% static 'play/js/game_info.js' %}"></script>
+    <script src="{% static 'play/js/utils.js' %}"></script>
+    <script src="{% static 'play/js/d3.js' %}"></script>
+    <script src="{% static 'play/js/refresh.js' %}"></script>
+
+
+    <!--
+        <header>
+            <div class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+
+                    <div class="navbar-header">
+                        <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="fa fa-bars"></span>
+                        </button>
+                        <a class="navbar-brand" href="/">example.com</a>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-responsive-collapse">
+
+
+                        <ul class="nav navbar-nav pull-right">
+
+                            <li><a href="/account/login/">Log in</a></li>
+
+                            <li><a href="/account/signup/">Sign up</a></li>
+
+
+                        </ul>
+
+                        <form id="accountLogOutForm" style="display: none;" action="/account/logout/" method="POST">
+                            <input type='hidden' name='csrfmiddlewaretoken' value='XqcgYia9YbAliZ2YRUE6B5W7z1wE0tY5'/>
+                        </form>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        -->
+    <div class="container2">
+
+        <section>
+
+            <div class="col-md-3">
+                <center>
+                    <i class="fa fa-cubes fa-3x"></i><br>
+
+                </center>
+
+                <div>
+                    <center>
+                        <b>More info</b><br>
+                        {% for reseau in reseau_info %}
+                            <span id={{ reseau.network_name }} info={{ reseau.info }}></span>
+                        {% endfor %}
+                        <p id=network_info>Here on click, more info on parameters </p>
+                    </center>
+
+                </div>
+
+
+                <div class="Parameters">
+
+                    <center><h3>Parameters</h3></center>
+                    <div class="left">
+
+                        <form action="/play/" method="post">
+                            {% csrf_token %}
+
+
+                            {% for field in globalForm %}
+                                <div>
+                                    {{ field.errors }}
+                                    {{ field.label_tag }} {{ field }}
+
+
+                                </div>
+                            {% endfor %}
+                            <hr>
+
+                            {% for field in form %}
+                                <div class="fieldform">
+                                    {{ field.errors }}
+                                    {{ field.label_tag }} {{ field }}
+                                    <button type="button" class="btn btn-warning btn-smsecondary" data-container="body"
+                                            data-toggle="popover" data-placement="top"
+                                            data-content="{{ field.help_text }}">
+                                        <i class="fa fa-question" aria-hidden="true"></i>
+                                    </button>
+
+
+                                </div>
+                            {% endfor %}
+                            <!--  <p> Network param</p> -->
+
+
+                            <input type="submit" id="modifyParam" class="btn btn-warning"
+                                   value="Modify">
+                        </form>
+
+
+                    </div>
+
+                    <p class="network" id="MLP" style="display: none;">
+                        <b>Layers</b>
+                        <select class="form-control" class="btn btn-warning">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
+
+                    </p>
+
+
+                    <p class="network" id="Elman" style="display: none;">
+
+                        <label>
+                            <input type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                            ok
+                        </label>
+
+                    </p>
+
+
+                </div>
+                <div class="clicknetwork">
+                    <center>
+
+                        <!-- depreciated -->
+                        <!--
+                                      <a href="#"  onclick="network_parameters('MLP'); return false;">MLP </a><br>
+                                      <a href="#"  onclick="network_parameters('Elman'); return false;">Elman </a><br>
+                                       <a href="#"  onclick="network_parameters('Jordan'); return false;">Jordan </a><br>
+
+                        -->
+
+
+                    </center>
+                </div>
+
+
+            </div>
+
+            <!--<div>
+                <input id="add_edge" type="checkbox" autocomplete="off" onchange="change_addEdge()"> Add
+                edge
+
+                <input id="add_vertex" type="checkbox" autocomplete="off" onchange="change_addVertex()"> Add
+                vertex
+
+                <input id="delete_edge" type="checkbox" autocomplete="off" onchange="change_deleteEdge()">
+                Delete edge
+
+                <input id="delete_vertex" type="checkbox" autocomplete="off"
+                       onchange="change_deleteVertex()"> Delete vertex
+            </div>-->
+            <div class="col-md-6">
+                <div class="test">
+
+                    <!-- <i class="fa fa-puzzle-piece fa-3x"></i><br> -->
+
+                    <!-- <b>Your game here</b> <br> -->
+                    <!-- Your structure -->
+
+                    <div class="container-fluid"
+                         style="background-color: #8c8c8c;  border-radius: 25px;">
+                        <!--<h3 style="color: whitesmoke">Control panel</h3>-->
+                        <div class="col-lg-3">
+                            <h4 style="color: whitesmoke">Network controls</h4>
+                        </div>
+                        <div class="col-lg-9 text-center" style="margin-top: 1%; margin-bottom: 1%">
+                            <div class="btn-group">
+
+                                <button id="add_edge" type="button" class="btn btn-primary"
+                                        onclick="change_addEdge()" onfocus="if(this.blur)this.blur()">Add edge
+                                </button>
+                                <button id="add_vertex" type="button" class="btn btn-primary"
+                                        onclick="change_addVertex()" onfocus="if(this.blur)this.blur()">Add vertex
+                                </button>
+                                <button id="delete_edge" type="button" class="btn btn-primary"
+                                        onclick="change_deleteEdge()" onfocus="if(this.blur)this.blur()">Delete edge
+                                </button>
+                                <button id="delete_vertex" type="button" class="btn btn-primary"
+                                        onclick="change_deleteVertex()" onfocus="if(this.blur)this.blur()">Delete vertex
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="container-fluid"
+                         style="background-color: #8c8c8c;  border-radius: 25px;">
+                        <div class="col-lg-3">
+                            <h4 style="color: whitesmoke">Grid controls</h4>
+                        </div>
+                        <div class="col-lg-9 text-center" style="margin-top: 1%; margin-bottom: 1%">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary" onclick="add_line()"
+                                        onfocus="if(this.blur)this.blur()">Add line!
+                                </button>
+                                <button type="button" class="btn btn-primary" onclick="add_column()"
+                                        onfocus="if(this.blur)this.blur()">Add Column!
+                                </button>
+                                <button type="button" class="btn btn-primary" onclick="remove_line()"
+                                        onfocus="if(this.blur)this.blur()">Delete line!
+                                </button>
+                                <button type="button" class="btn btn-primary" onclick="remove_column()"
+                                        onfocus="if(this.blur)this.blur()">Delete column!
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+                    <svg width="770" height="500"></svg>
+                    <script>
+                        var svg = d3.select("svg")
+                        svg.append('svg:defs').append('svg:pattern')
+                            .attr('id', 'in')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("x", 0)
+                            .attr("y", 0)
+                            .append('svg:image')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("xlink:href", "{% static 'play/img/in.png' %}")
+
+                        svg.append('svg:defs').append('svg:pattern')
+                            .attr('id', 'out')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("x", 0)
+                            .attr("y", 0)
+                            .append('svg:image')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("xlink:href", "{% static 'play/img/out.png' %}")
+
+                        svg.append('svg:defs').append('svg:pattern')
+                            .attr('id', 'mlp')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("x", 0)
+                            .attr("y", 0)
+                            .append('svg:image')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("xlink:href", "{% static 'play/img/mlp.png' %}")
+
+                        svg.append('svg:defs').append('svg:pattern')
+                            .attr('id', 'jordan')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("x", 0)
+                            .attr("y", 0)
+                            .append('svg:image')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("xlink:href", "{% static 'play/img/jordan.png' %}")
+
+                        svg.append('svg:defs').append('svg:pattern')
+                            .attr('id', 'elman')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("x", 0)
+                            .attr("y", 0)
+                            .append('svg:image')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("xlink:href", "{% static 'play/img/elman.png' %}")
+
+
+                        svg.append('svg:defs').append('svg:pattern')
+                            .attr('id', 'avg')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("x", 0)
+                            .attr("y", 0)
+                            .append('svg:image')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("xlink:href", "{% static 'play/img/op_avg.png' %}")
+
+                        svg.append('svg:defs').append('svg:pattern')
+                            .attr('id', 'decomp')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("x", 0)
+                            .attr("y", 0)
+                            .append('svg:image')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("xlink:href", "{% static 'play/img/op_decomp.png' %}")
+
+                        svg.append('svg:defs').append('svg:pattern')
+                            .attr('id', 'minus')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("x", 0)
+                            .attr("y", 0)
+                            .append('svg:image')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("xlink:href", "{% static 'play/img/op_minus.png' %}")
+
+
+                        svg.append('svg:defs').append('svg:pattern')
+                            .attr('id', 'mult')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("x", 0)
+                            .attr("y", 0)
+                            .append('svg:image')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("xlink:href", "{% static 'play/img/op_mult.png' %}")
+			
+			
+                        svg.append('svg:defs').append('svg:pattern')
+                            .attr('id', 'divide')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("x", 0)
+                            .attr("y", 0)
+                            .append('svg:image')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("xlink:href", "{% static 'play/img/op_divide.png' %}")
+			
+                        svg.append('svg:defs').append('svg:pattern')
+                            .attr('id', 'mult')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("x", 0)
+                            .attr("y", 0)
+                            .append('svg:image')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("xlink:href", "{% static 'play/img/op_mult.png' %}")
+
+                        svg.append('svg:defs').append('svg:pattern')
+                            .attr('id', 'plus')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("x", 0)
+                            .attr("y", 0)
+                            .append('svg:image')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("xlink:href", "{% static 'play/img/op_plus.png' %}")
+
+
+                        svg.append('svg:defs').append('svg:pattern')
+                            .attr('id', 'recomp')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("x", 0)
+                            .attr("y", 0)
+                            .append('svg:image')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("xlink:href", "{% static 'play/img/op_recomp.png' %}")
+
+
+                        svg.append('svg:defs').append('svg:pattern')
+                            .attr('id', 'tempo')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("x", 0)
+                            .attr("y", 0)
+                            .append('svg:image')
+                            .attr("height", 40)
+                            .attr("width", 40)
+                            .attr("xlink:href", "{% static 'play/img/op_tempo.png' %}")
+                    </script>
+
+                    <script src="{% static 'play/js/app.js' %}"></script>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <center>
+
+
+                    <div class="dropdown">
+
+                        <button class="btn btn-primary  dropdown-toggle" type="button" data-toggle="dropdown"
+                                aria-controls="collapseExample">Games
+                            <span class="caret"></span></button>
+
+
+                        <ul class="dropdown-menu ">
+                            {% for Game in game_list %}
+
+                                <li><a name={{ Game.game_name }} href="#" info={{ Game.info }} onclick="getname(this);
+                                       return false;" >
+                                </li>
+
+                                <i class="fa fa-gamepad fa-fw" aria-hidden="true"></i>&nbsp;{{ Game.game_name }}
+                                </a></li>
+                                <li class="divider"></li>
+                            {% endfor %}
+                        </ul>
+
+                    </div>
+
+                </center>
+
+                <div>
+
+                    <center>
+                        <div class="highlight">
+                            <p id="currentGame" name="CartPole-v0">CartPole-v0</p>
+                            <p id="Gamecontent">Sélectionner votre jeu pour plus d'informations</p>
+
+
+                        </div>
+                        <div class="animation">
+                            {% include "animation.html" %}
+                        </div>
+
+                        <button id="send_backend" type="button" class="btn btn-primary"
+                                onclick="send();">Play
+                        </button>
+                    </center>
+
+
+                </div>
+
+            </div>
+
+
+    </div>
+    </section>
+    </div>
+
+{% endblock %}
+
+

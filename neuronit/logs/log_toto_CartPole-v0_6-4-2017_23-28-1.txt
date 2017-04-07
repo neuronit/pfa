@@ -1,0 +1,18 @@
+===================================================================================
+user name: toto
+game name: CartPole-v0
+number of simulations: 10
+number of epochs: 10
+max score: 200
+===================================================================================
+types array: [u'in', u'mlp', u'out']
+weights array: [-1, -1, -1]
+rewards array: [-1, -1, -1]
+punishs array: [-1, -1, -1]
+inner sizes_array: [array([], dtype=float64), array([], dtype=float64), array([], dtype=float64)]
+links array: [[1], [], []]
+===================================================================================
+rl_gamma: 0.6
+rl_epsilon: 0.05
+was_loaded: False
+===================================================================================

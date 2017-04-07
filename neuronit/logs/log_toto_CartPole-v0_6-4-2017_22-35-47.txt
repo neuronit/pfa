@@ -1,0 +1,118 @@
+===================================================================================
+user name: toto
+game name: CartPole-v0
+number of simulations: 10
+number of epochs: 10
+max score: 200
+===================================================================================
+types array: [u'in', u'mlp', u'out']
+weights array: [-1, 0.186, -1]
+rewards array: [-1, 0.07, -1]
+punishs array: [-1, -0.15, -1]
+inner sizes_array: [array([], dtype=float64), array([34,  1]), array([], dtype=float64)]
+links array: [[1], [2], []]
+===================================================================================
+rl_gamma: 0.6
+rl_epsilon: 0.05
+was_loaded: False
+===================================================================================
+simulation: 0, epoch: 0, score: 66
+simulation: 0, epoch: 1, score: 34
+simulation: 0, epoch: 2, score: 68
+simulation: 0, epoch: 3, score: 39
+simulation: 0, epoch: 4, score: 26
+simulation: 0, epoch: 5, score: 27
+simulation: 0, epoch: 6, score: 27
+simulation: 0, epoch: 7, score: 49
+simulation: 0, epoch: 8, score: 39
+simulation: 0, epoch: 9, score: 31
+simulation: 1, epoch: 0, score: 14
+simulation: 1, epoch: 1, score: 18
+simulation: 1, epoch: 2, score: 12
+simulation: 1, epoch: 3, score: 20
+simulation: 1, epoch: 4, score: 70
+simulation: 1, epoch: 5, score: 60
+simulation: 1, epoch: 6, score: 68
+simulation: 1, epoch: 7, score: 42
+simulation: 1, epoch: 8, score: 48
+simulation: 1, epoch: 9, score: 59
+simulation: 2, epoch: 0, score: 9
+simulation: 2, epoch: 1, score: 8
+simulation: 2, epoch: 2, score: 9
+simulation: 2, epoch: 3, score: 10
+simulation: 2, epoch: 4, score: 15
+simulation: 2, epoch: 5, score: 26
+simulation: 2, epoch: 6, score: 18
+simulation: 2, epoch: 7, score: 19
+simulation: 2, epoch: 8, score: 20
+simulation: 2, epoch: 9, score: 18
+simulation: 3, epoch: 0, score: 51
+simulation: 3, epoch: 1, score: 23
+simulation: 3, epoch: 2, score: 78
+simulation: 3, epoch: 3, score: 22
+simulation: 3, epoch: 4, score: 24
+simulation: 3, epoch: 5, score: 29
+simulation: 3, epoch: 6, score: 31
+simulation: 3, epoch: 7, score: 41
+simulation: 3, epoch: 8, score: 61
+simulation: 3, epoch: 9, score: 41
+simulation: 4, epoch: 0, score: 9
+simulation: 4, epoch: 1, score: 9
+simulation: 4, epoch: 2, score: 53
+simulation: 4, epoch: 3, score: 200
+simulation: 4, epoch: 4, score: 58
+simulation: 4, epoch: 5, score: 30
+simulation: 4, epoch: 6, score: 200
+simulation: 4, epoch: 7, score: 76
+simulation: 4, epoch: 8, score: 135
+simulation: 4, epoch: 9, score: 77
+simulation: 5, epoch: 0, score: 13
+simulation: 5, epoch: 1, score: 15
+simulation: 5, epoch: 2, score: 16
+simulation: 5, epoch: 3, score: 29
+simulation: 5, epoch: 4, score: 24
+simulation: 5, epoch: 5, score: 24
+simulation: 5, epoch: 6, score: 18
+simulation: 5, epoch: 7, score: 21
+simulation: 5, epoch: 8, score: 24
+simulation: 5, epoch: 9, score: 20
+simulation: 6, epoch: 0, score: 8
+simulation: 6, epoch: 1, score: 9
+simulation: 6, epoch: 2, score: 18
+simulation: 6, epoch: 3, score: 9
+simulation: 6, epoch: 4, score: 10
+simulation: 6, epoch: 5, score: 10
+simulation: 6, epoch: 6, score: 10
+simulation: 6, epoch: 7, score: 26
+simulation: 6, epoch: 8, score: 23
+simulation: 6, epoch: 9, score: 30
+simulation: 7, epoch: 0, score: 10
+simulation: 7, epoch: 1, score: 10
+simulation: 7, epoch: 2, score: 10
+simulation: 7, epoch: 3, score: 12
+simulation: 7, epoch: 4, score: 19
+simulation: 7, epoch: 5, score: 24
+simulation: 7, epoch: 6, score: 41
+simulation: 7, epoch: 7, score: 64
+simulation: 7, epoch: 8, score: 46
+simulation: 7, epoch: 9, score: 61
+simulation: 8, epoch: 0, score: 10
+simulation: 8, epoch: 1, score: 8
+simulation: 8, epoch: 2, score: 200
+simulation: 8, epoch: 3, score: 200
+simulation: 8, epoch: 4, score: 200
+simulation: 8, epoch: 5, score: 200
+simulation: 8, epoch: 6, score: 200
+simulation: 8, epoch: 7, score: 200
+simulation: 8, epoch: 8, score: 200
+simulation: 8, epoch: 9, score: 97
+simulation: 9, epoch: 0, score: 10
+simulation: 9, epoch: 1, score: 11
+simulation: 9, epoch: 2, score: 10
+simulation: 9, epoch: 3, score: 110
+simulation: 9, epoch: 4, score: 64
+simulation: 9, epoch: 5, score: 119
+simulation: 9, epoch: 6, score: 111
+simulation: 9, epoch: 7, score: 60
+simulation: 9, epoch: 8, score: 159
+simulation: 9, epoch: 9, score: 200

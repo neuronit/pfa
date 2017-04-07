@@ -1,0 +1,126 @@
+body, html{
+    background-color: #fff;
+    height:100%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+
+.navbar {
+    border-radius: 0;
+    margin-bottom:0;
+}
+
+header{
+    border-radius: 0;
+    color:#fff;
+    box-shadow: none;
+}
+
+#carousel-example {
+    z-index: 0;
+}
+
+#carousel-example .carousel-inner{
+    text-align: center;
+}
+
+#carousel-example .carousel-inner .item {
+    background_size: cover; 
+    vertical-align: middle; 
+    padding: 22em 0;
+}
+
+#carousel-example .carousel-inner .item h1 {
+    color: white; 
+    font-family: Georgia; 
+    font-size: 700%;
+}
+#carousel-example .carousel-inner .item p {
+    color: white; 
+    font-size: 200%;
+}
+
+@media(min-width:767px) {
+    .navbar {
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+
+    .top-nav-collapse {
+        padding: 0;
+    }
+}
+section {
+    padding: 150px 0;
+}
+
+#banner {
+    background-image: url(../img/neural-network-2.jpg);
+    background-position: top left, center center;
+    background-size: cover;
+    color: #d1d2d4;
+    padding: 22em 0;
+    position: relative;
+    text-align: center;
+}
+
+#banner h2 {
+    font-size: 3.25em;
+    font-weight: 600;
+    font-family: "Lato";
+    src: local("Lato Bold"), local("Lato-Bold"), url("https://fonts.gstatic.com/s/lato/v11/H2DMvhDLycM56KNuAtbJYA.woff2") format("woff2");
+    color: #fff;
+}
+
+#banner p {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 1.75em;
+}
+
+
+.btn-lg{
+    padding: 20px 40px;
+    border-color: #fff;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    background-color: transparent;
+}
+
+h2 {
+    margin-bottom: 50px;
+    color: #000;
+}
+
+.navbar {
+    background-image: none;
+}
+
+#playBox {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000;    
+    background-color:#eee; 
+    padding-top: 500px;
+    margin-top :140px;
+    margin-left :40px;
+    margin-right :40px;
+}
+
+#log {
+    margin-top :140px;
+    margin-left :40px;
+    margin-right :40px;
+
+}
+#register {
+    margin-top :140px;
+    margin-left :40px;
+    margin-right :40px;
+
+}

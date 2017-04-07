@@ -1,0 +1,19 @@
+{% extends 'site_base.html' %}
+{% block head_title %}Load game{% endblock %}
+{% block body %}
+    <center>
+        <div class="Parameters text-center" style="background-color: #5bc0de">
+            <h3>Load a saved game</h3>
+            <form name="load" id="loadForm" novalidate="" method="post">
+                {% csrf_token %}
+                <select class="form-control" name="sel1" style="margin-left: 10%; width: 80%">
+                    {% for save in save_list %}
+                    <option>{{ save.name }}</option>
+                    {% endfor %}
+                </select>
+                <br>
+                <input class="btn btn-primary" value="Load" type="submit">
+            </form>
+        </div>
+    </center>
+{% endblock %}

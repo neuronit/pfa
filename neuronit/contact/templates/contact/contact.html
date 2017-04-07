@@ -1,0 +1,65 @@
+{% extends 'site_base.html' %}
+{% block head_title %}Contact Us !{% endblock %}
+{% block body %}
+<link href='/site_media/static/css/contact.css' rel='stylesheet'/>
+    <section>
+        <div id="contact" class="container">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8">
+                    <h2 class="section-heading">Contact us</h2>
+                    <h3 class="section-subheading">Any comments, issues, or suggestions will be
+                        examined</h3>
+                </div>
+            </div>
+            {% if response %}
+                <br><br><br>
+                <div class="text-success text-center">
+                    <h3 class="section-subheading">{{ response }}</h3>
+                    <br><br>
+                    <a class="btn btn-primary btn-lg" role="button" href="{% url 'contact' %}">Back to contact's page</a>
+                </div>
+            {% else %}
+                <div class="row">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-6">
+                        <br><br><br><br>
+                        <form name="sentMessage" id="contactForm" novalidate="" method="post">
+                            {% csrf_token %}
+                            <br>
+                            <div class="form-group">
+                                <input class="form-control" id="id_name" maxlength="127" name="name"
+                                       placeholder="Enter Full Name" type="text">
+                                <p id="id_contact_name_danger" class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" id="id_email" maxlength="254" name="email"
+                                       placeholder="Enter Email" type="email">
+                                <p id="id_contact_email_danger" class="help-block text-danger"></p>
+
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <input class="form-control" id="id_subject" maxlength="254"
+                                               name="subject"
+                                               placeholder="Subject" type="subject">
+                                        <p id="id_contact_subject_danger" class="help-block text-danger"></p>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                            <textarea id="id_message" name="message" rows="10" class="form-control"
+                                      placeholder="Your message"></textarea>
+                                    <p id="id_contact_message_danger" class="help-block text-danger"></p>
+                                    <input class="btn btn-primary" value="Send message" type="submit">
+                                </div>
+                                <div class="text-error">
+                                    {{ response }}
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+            {% endif %}
+    </section>
+{% endblock %}

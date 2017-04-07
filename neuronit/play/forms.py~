@@ -1,0 +1,7 @@
+from django import forms
+
+
+class ParamForm(forms.Form):
+    weight= forms.IntegerField(max_value=999999,label='Weight multiplicator',required=False)
+    victory= forms.IntegerField(max_value=999999,label='Victory reward',required=False)
+    defeat= forms.IntegerField(max_value=999999, label='Defeat punishement',required=False)
